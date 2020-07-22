@@ -1,9 +1,10 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import "./index.less";
 
 const Test = () => {
-  return <div className="">test</div>;
+  return <div className="">te2st</div>;
 };
 
-export default Test;
+ReactDOM.render(<Test />, document.getElementById("root"));
