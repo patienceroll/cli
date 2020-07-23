@@ -2,6 +2,7 @@ const path = require("path");
 
 const { rules } = require("./config/module");
 const { plugins } = require("./config/plugins");
+const proxy = require("./config/proxy");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -18,5 +19,8 @@ module.exports = {
   plugins: plugins,
   devServer: {
     contentBase: "./dist",
+    host: "127.0.0.1",
+    port: "1996",
+    proxy: proxy,
   },
 };

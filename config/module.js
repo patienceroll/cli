@@ -19,6 +19,18 @@ const rules = [
     test: /\.tsx$/,
     use: ["ts-loader"],
   },
+  {
+    test: /\.(png|jpg|gif)$/,
+    use: [
+      {
+        loader: "file-loader",
+        options: {
+          name: "[name].[hash].[ext]",
+          outputPath: "assets",
+        },
+      },
+    ],
+  },
 ];
 
 exports.rules = rules;
