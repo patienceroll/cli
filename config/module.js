@@ -1,11 +1,19 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 const rules = [
   {
     test: /\.css$/,
-    use: ["css-loader"],
+    use: ExtractTextPlugin.extract({
+      fallback: "style-loader",
+      use: "css-loader",
+    }),
   },
   {
     test: /\.less$/,
-    use: ["less-loader"],
+    use: ExtractTextPlugin.extract({
+      fallback: "style-loader",
+      use: ["css-loader", "less-loader"],
+    }),
   },
   {
     test: /\.tsx$/,
