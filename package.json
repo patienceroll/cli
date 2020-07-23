@@ -1,7 +1,10 @@
 {
+  "name":"cli",
+  "version": "0.0.1",
+  "private":"false",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --config webpack.config.js --mode production",
     "commit": "npx git-cz"
   },
   "dependencies": {
