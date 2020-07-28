@@ -4,7 +4,7 @@
         /** 支持js的模块导入 */
         "allowSyntheticDefaultImports": true,
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "es2020",
         "target": "es5",
         "jsx": "react",
         "allowJs": false,

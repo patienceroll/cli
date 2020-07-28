@@ -8,6 +8,7 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.[chunkhash].js",
+    chunkFilename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
