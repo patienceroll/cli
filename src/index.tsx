@@ -4,11 +4,11 @@ import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import "./index.less";
 
-import img from "./assets/1.jpg";
+import img from "@src/assets/1.jpg";
 
 const Test1 = () => {
   const [child, setChild] = useState<
-    typeof import("d:/personal-program/cli/src/pages/test1/test1") | undefined
+    typeof import("@src/pages/test1/test1") | undefined
   >();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Test1 = () => {
 
 const Test2 = () => {
   const [child, setChild] = useState<
-    typeof import("d:/personal-program/cli/src/pages/test1/test1") | undefined
+    typeof import("@src/pages/test2/test2") | undefined
   >();
 
   useEffect(() => {
@@ -59,10 +59,10 @@ const Test = () => {
           <Route exact path="/">
             <Redirect to="/test1" />
           </Route>
-          <Route  path="/test1">
+          <Route path="/test1">
             <Test1 />
           </Route>
-          <Route  path="/test2">
+          <Route path="/test2">
             <Test2 />
           </Route>
         </Switch>

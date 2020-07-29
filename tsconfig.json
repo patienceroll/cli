@@ -8,6 +8,15 @@
         "target": "es5",
         "jsx": "react",
         "allowJs": false,
+        "baseUrl": ".",
+        "paths": {
+            "@src/*": [
+                "./src/*"
+            ],
+            "@public/*": [
+                "./public/*"
+            ]
+        }
     },
     "files": [
         "global.d.ts"
@@ -17,5 +26,5 @@
     ],
     "exclude": [
         "node_modules",
-    ]
+    ],
 }
