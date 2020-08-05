@@ -6,6 +6,25 @@ import "./index.less";
 
 import img from "@src/assets/1.jpg";
 
+/** 懒加载组件接口 */
+interface LazyLoadComponentProps {
+  src: string;
+}
+
+/** 懒加载组件 */
+const LazyLoadComponent: React.FC<LazyLoadComponentProps> = ({ src }) => {
+  const [moduleItem, setModuleItem] = useState<{ default: JSX.Element }>(null);
+  useEffect(() => {
+    import(src)
+      .then((moduleItem) => {
+        setModuleItem(moduleItem);
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
+  return moduleItem?.default || <div>加载中...(import()不支持变量,怎么解决呢)</div>;
+};
+
 const Test1 = () => {
   const [child, setChild] = useState<
     typeof import("@src/pages/test1/test1") | undefined
@@ -64,6 +83,7 @@ const Test = () => {
           </Route>
           <Route path="/test2">
             <Test2 />
+            {/* <LazyLoadComponent src={"@src/pages/test2/test2"} /> */}
           </Route>
         </Switch>
       </BrowserRouter>

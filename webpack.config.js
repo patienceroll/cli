@@ -7,8 +7,8 @@ const proxy = require("./config/proxy");
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    filename: "bundle.[chunkhash].js",
-    chunkFilename: "[name].bundle.js",
+    filename: "bundle.[hash].js",
+    chunkFilename: "[name].[hash].bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
